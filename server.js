@@ -31,7 +31,7 @@ app.get("/", function (req, res) {
 app.post("/api/Upload", function (req, res) {
     upload(req, res, function (err) {
         if (err) {
-            return res.end("Something went wrong!");
+            return res.end("Something went wrong!" + err);
         }
 
         return res.end("File uploaded sucessfully!.");
@@ -41,7 +41,24 @@ app.post("/api/Upload", function (req, res) {
 
 app.get("/files", function (req, res) {
 
+    function getFiles(dir) {
+        // console.log('[+]', dir);
+        var files = fs.readdirSync(dir);
+        var list = new ArrayList;
+        files.forEach(function (file) {
+            file = dir + '/' + file;
+            list.add(file);
+            // Do whatever you want to do with the file
+            
+        });
+        
+        return res.json(list);
+        console.log(list);
+    }
+    
+
     getFiles(directoryPath);
+    
 
     // //passsing directoryPath and callback function
     // fs.readdir(directoryPath, function (err, files) {
@@ -57,18 +74,6 @@ app.get("/files", function (req, res) {
     // });
 });
 
-function getFiles(dir) {
-    // console.log('[+]', dir);
-    var files = fs.readdirSync(dir);
-    var list = new ArrayList;
-    files.forEach(function (file) {
-        file = dir + '/' + file;
-        list.add(file);
-        // Do whatever you want to do with the file
-        
-    });
-    console.log(list);
-}
 
 
 
