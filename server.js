@@ -2,6 +2,8 @@
 var multer = require('multer');
 var bodyParser = require('body-parser');
 var ArrayList = require('arraylist');
+
+var PORT = process.env.PORT || 2000;
 //requiring path and fs modules
 const path = require('path');
 const fs = require('fs');
@@ -70,6 +72,6 @@ function getFiles(dir) {
 
 
 
-app.listen(2000, function (a) {
-            console.log("Listening to port 2000");
+app.listen(PORT, function (a) {
+            console.log("Your API Listening to port :- " + PORT + "!");
         });
