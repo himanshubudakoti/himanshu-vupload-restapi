@@ -1,0 +1,18 @@
+{
+  "name": "node_js_file_upload",
+  "version": "0.0.1",
+  "description": "Node_JS_File_Upload",
+  "main": "server.js",
+  "dependencies": {
+    "arraylist": "^0.1.0",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "file-system": "^2.2.2",
+    "multer": "^1.2.0",
+    "path": "^0.12.7",
+    "walk-sync": "^0.3.3"
+  },
+  "author": {
+    "name": "Himanshu"
+  }
+}
